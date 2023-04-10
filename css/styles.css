@@ -161,6 +161,9 @@ body {
 	position: relative;
 }
 
+.header-link.current {
+	color: var(--pressed-state-color);
+}
 .current::after {
 	content: "";
 	position: absolute;
@@ -178,7 +181,6 @@ body {
 	padding-top: 24px;
 	padding-bottom: 24px;
 	display: block;
-	transition-property: color;
 	transition: color var(--typical-transitions);
 }
 
@@ -200,7 +202,6 @@ body {
 	padding-top: 24px;
 	padding-bottom: 24px;
 	display: block;
-	transition-property: color;
 	transition: color var(--typical-transitions);
 }
 .contacts-link:is(:hover, :focus) {
@@ -240,17 +241,13 @@ body {
 	margin: 0 auto;
 	padding: 16px 32px;
 	background-color: var(--primary-state-color);
-	border: 1px solid var(--primary-state-color);
+	border: 1px solid transparent;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
-	transition-property: background-color, border, box-shadow;
-	transition: background-color var(--typical-transitions),
-		border var(--typical-transitions), box-shadow var(--typical-transitions);
+	transition: background-color var(--typical-transitions);
 }
 
 .hero-btn:is(:hover, :focus) {
 	background-color: var(--pressed-state-color);
-	border: 1px solid var(--pressed-state-color);
-	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
 }
 /** --------------- ABOUT ----------------- */
 
@@ -356,12 +353,11 @@ body {
 	align-items: center;
 	justify-content: center;
 	color: rgba(244, 244, 253, 1);
+	transition: background-color var(--typical-transitions);
 }
 
 .team-soc-icon {
 	fill: currentColor;
-	transition-property: background-color;
-	transition: background-color var(--typical-transitions);
 }
 
 .team-soc-link:is(:hover, :focus) {
@@ -392,12 +388,11 @@ body {
 	width: 168px;
 	height: 88px;
 	cursor: pointer;
+	transition: border-color var(--typical-transitions),
+		color var(--typical-transitions);
 }
 .customers-icon {
 	fill: currentColor;
-	transition-property: border-color, color;
-	transition: border-color var(--typical-transitions),
-		color var(--typical-transitions);
 }
 
 .customers-link:is(:hover, :focus) {
@@ -463,11 +458,10 @@ body {
 	align-items: center;
 	justify-content: center;
 	color: rgba(244, 244, 253, 1);
+	transition: background-color var(--typical-transitions);
 }
 .footer-soc-icon {
 	fill: currentColor;
-	transition-property: background-color;
-	transition: background-color var(--typical-transitions);
 }
 .footer-soc-link:is(:hover, :focus) {
 	background-color: #31d0aa;
@@ -502,8 +496,6 @@ body {
 	background: var(--second-bgr-color);
 	border: 1px solid #e7e9fc;
 	border-radius: 4px;
-	transition-property: color, background-color, border, box-shadow,
-		border-radius;
 	transition: color var(--typical-transitions),
 		background-color var(--typical-transitions),
 		border var(--typical-transitions), box-shadow var(--typical-transitions),
@@ -528,9 +520,7 @@ body {
 
 .projects-link {
 	display: block;
-	transition-property: box-shadow;
 	transition: box-shadow var(--typical-transitions);
-	display: block;
 }
 
 .projects-link:is(:hover, :focus) {
@@ -549,7 +539,7 @@ body {
 	width: 100%;
 	height: 100%;
 	transform: translate(0, 100%);
-	transition: transform 500ms linear;
+	transition: transform var(--typical-transitions);
 
 	color: var(--second-bgr-color);
 	padding: 40px 32px;
@@ -623,10 +613,8 @@ body {
 	background: #e7e9fc;
 	border-radius: 50%;
 	display: block;
-	align-items: center;
 	margin-left: auto;
 	color: var(--main-text-color);
-	transition-property: color, background, border;
 	transition: color var(--typical-transitions),
 		background var(--typical-transitions), border var(--typical-transitions);
 }
